@@ -7,6 +7,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
+const compresion = require('compression');
 const cors = require('cors');
 const csp = require('express-csp');
 
@@ -120,6 +121,8 @@ app.use(
     whitelist: ['duration', 'ratingsQuantity', 'ratingsAverage', 'maxGroupSize', 'difficulty', 'price'],
   })
 );
+
+app.use(compresion());
 
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
