@@ -11925,7 +11925,6 @@ var logout = exports.logout = /*#__PURE__*/function () {
           });
         case 3:
           resp = _context2.sent;
-          // if ((resp.data.status = 'success')) location.reload(true);
           if (resp.data.status = 'success') location.assign('/');
           _context2.next = 10;
           break;
@@ -11954,29 +11953,17 @@ var displayMap = exports.displayMap = function displayMap(locations) {
   mapboxgl.accessToken = 'pk.eyJ1IjoiYWRpdHZhc2F2YSIsImEiOiJjbTJjcmtwaDkxNnJjMnZweXhlOHdrcWJ3In0.3wuJW2At_zMduEsqHUBUtw';
   var map = new mapboxgl.Map({
     container: 'map',
-    // container ID
     style: 'mapbox://styles/mapbox/streets-v12',
-    // style URL
     scrollZoom: false
-    //   center: [-74.5, 40], // starting position [lng, lat]
-    //   zoom: 2, // starting zoom
   });
-
-  // mapboxgl class coming from the script that is included in the header
   var bounds = new mapboxgl.LngLatBounds();
   locations.forEach(function (loc) {
-    // Creating marker
     var ele = document.createElement('div');
-    // check css file for this marker
     ele.className = 'marker';
-
-    // Adding marker
     new mapboxgl.Marker({
       element: ele,
       anchor: 'bottom'
     }).setLngLat(loc.coordinates).addTo(map);
-
-    // Adding Popup
     new mapboxgl.Popup({
       offset: 30
     }).setLngLat(loc.coordinates).setHTML("<p>Day ".concat(loc.day, ": ").concat(loc.description, "</p>")).addTo(map);
@@ -13094,7 +13081,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52547" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64993" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
